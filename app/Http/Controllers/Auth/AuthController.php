@@ -16,14 +16,16 @@ class AuthController extends Controller
      */
     public function signUp(Request $request)
     {
+        $tableUser = (new User())->getTable();
+
         $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
+            'username' => 'required|string',
+            'email' => "required|string|email|unique:{$tableUser}",
             'password' => 'required|string'
         ]);
 
         User::create([
-            'name' => $request->name,
+            'username' => $request->username,
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
