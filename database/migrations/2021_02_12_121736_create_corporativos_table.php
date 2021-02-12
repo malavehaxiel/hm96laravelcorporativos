@@ -14,7 +14,7 @@ class CreateCorporativosTable extends Migration
     public function up()
     {
         Schema::create('tw_corporativos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('S_NombreCorto', 45);
             $table->string('S_NombreCompleto', 45);
             $table->string('S_LogoUrl', 255)->nullable();
