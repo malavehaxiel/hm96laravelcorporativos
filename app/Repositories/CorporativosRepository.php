@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Corporativo;
+use Illuminate\Database\Eloquent\Model;
 
 class CorporativosRepository extends Repository {
 
@@ -19,7 +20,7 @@ class CorporativosRepository extends Repository {
         'D_FechaIncorporacion' => 'required'
     ];
 
-    public function closureStoreModel($model, $request)
+    public function closureStoreModel($model, $request): Model
     {
     	$model->tw_usuarios_id = auth()->user()->id;
 

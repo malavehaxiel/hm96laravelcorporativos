@@ -16,7 +16,7 @@ abstract class Repository {
 		$this->model = new $this->model;
 	}
 
-	abstract public function closureStoreModel($model, $request);
+	abstract public function closureStoreModel($model, $request): Model;
 
 	public function all()
 	{
