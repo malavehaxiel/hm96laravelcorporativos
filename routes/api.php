@@ -32,11 +32,7 @@ Route::group(['middleware' => 'cors'], function() {
 	Route::group(['middleware' => 'auth:api'], function() {
 		
 		// Corporativos
-		Route::get('corporativos', 'CorporativosController@index');
-		Route::post('corporativos', 'CorporativosController@store');
-		Route::get('corporativos/{id}', 'CorporativosController@show');
-		Route::put('corporativos/{id}', 'CorporativosController@update');
-		Route::patch('corporativos/{id}', 'CorporativosController@update');
+		Route::resource('corporativos', 'CorporativosController');
 	});
 });
 

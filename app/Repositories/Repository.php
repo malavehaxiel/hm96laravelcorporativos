@@ -49,4 +49,12 @@ abstract class Repository {
 	{
 		return $this->model->find($id);
 	}
+
+	public function delete($id)
+	{
+		$resource = $this->model->find($id);
+		$resource->delete();
+
+		return $resource;
+	}
 }

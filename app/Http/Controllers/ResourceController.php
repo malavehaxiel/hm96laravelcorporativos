@@ -10,7 +10,6 @@ class ResourceController extends Controller {
 	protected $repository;
 	protected $rules;
 
-
     public function __construct()
     {
     	$this->repository = new $this->repository;
@@ -46,9 +45,19 @@ class ResourceController extends Controller {
     {
     	if (is_null($this->repository->model->find($id)))
     		return $this->errorNotFoundResponse();
-    	
+
     	return $this->successResponse(
     		$this->repository->find($id)
+    	);
+    }
+
+    public function destroy($id)
+    {
+		if (is_null($this->repository->model->find($id)))
+    		return $this->errorNotFoundResponse();
+
+    	return $this->successResponse(
+    		$this->repository->delete($id)
     	);
     }
 }
