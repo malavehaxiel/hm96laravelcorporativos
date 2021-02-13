@@ -17,5 +17,6 @@ $factory->define(Corporativo::class, function (Faker $faker) {
         'S_DBPassword' => $faker->password,
         'S_SystemUrl' => $faker->url,
         'tw_usuarios_id' => $faker->numberBetween(1, User::count()),
+        'D_FechaIncorporacion' => date('Y-m-d H:i:s')
     ];
 });
