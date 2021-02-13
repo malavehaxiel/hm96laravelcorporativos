@@ -29,4 +29,16 @@ class ResourceController extends Controller {
         	$this->repository->create($request)
         );
     }
+
+    public function update(Request $request, $id)
+    {
+    	if (is_null($this->repository->model->find($id)))
+    		return $this->errorNotFoundResponse();
+
+    	$request->validate($this->repository->rulesUpdate);
+
+    	return $this->successResponse(
+    		$this->repository->update($request, $id)
+    	);
+    }
 }

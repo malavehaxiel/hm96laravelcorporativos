@@ -26,4 +26,15 @@ trait HttpApiResponser
     {
         return $this->errorResponse($message, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
+
+    public function errorNotFoundResponse($message = '404 Not Fount')
+    {
+        return $this->errorResponse($message, Response::HTTP_NOT_FOUND);
+    }
+
+    public function errorForbiddenResponse($message = '403 Requesting the URL is prohibited')
+    {
+        return $this->errorResponse($message, Response::HTTP_FORBIDDEN);
+    }
+
 }
