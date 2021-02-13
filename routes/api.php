@@ -34,6 +34,7 @@ Route::group(['middleware' => 'cors'], function() {
 		// Corporativos
 		Route::get('corporativos', 'CorporativosController@index');
 		Route::post('corporativos', 'CorporativosController@store');
+		Route::get('corporativos/{id}', 'CorporativosController@show');
 		Route::put('corporativos/{id}', 'CorporativosController@update');
 		Route::patch('corporativos/{id}', 'CorporativosController@update');
 	});

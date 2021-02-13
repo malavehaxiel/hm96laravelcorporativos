@@ -44,4 +44,9 @@ abstract class Repository {
 
 		return $resource;
 	}
+
+	public function find($id)
+	{
+		return $this->model->find($id);
+	}
 }
