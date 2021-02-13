@@ -14,14 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'auth'], function () {
+Route::group(['middleware' => 'cors'], function() {
 
-    Route::post('login', 'Auth\AuthController@login')->name('login');
-    Route::post('signup', 'Auth\AuthController@signUp');
+	Route::group(['prefix' => 'auth'], function () {
 
-    Route::group(['middleware' => 'auth:api'], function() {
+	    Route::post('login', 'Auth\AuthController@login')->name('login');
+	    Route::post('signup', 'Auth\AuthController@signUp');
 
-        Route::get('logout', 'Auth\AuthController@logout');
-        Route::get('user', 'Auth\AuthController@user');
-    });
+	    Route::group(['middleware' => 'auth:api'], function() {
+
+	        Route::get('logout', 'Auth\AuthController@logout');
+	        Route::get('user', 'Auth\AuthController@user');
+	    });
+	});
+
+
+	Route::group(['middleware' => 'auth:api'], function() {
+		
+		// Corporativos
+		Route::get('corporativos', 'CorporativosController@index');
+		Route::post('corporativos', 'CorporativosController@store');
+	});
 });
+

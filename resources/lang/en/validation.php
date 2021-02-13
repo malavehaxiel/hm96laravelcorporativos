@@ -146,6 +146,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'S_NombreCorto' => 'nombre corto',
+        'S_NombreCompleto' => 'nombre completo',
+        'S_DBName' => 'nombre de base de datos',
+        'S_DBUsuario' => 'nombre de usuario base de datos',
+        'S_DBPassword' => 'contraseña de base de datos',
+        'S_SystemUrl' => 'url del sistema',
+        'D_FechaIncorporacion' => 'fecha de incorporación',
+    ],
 
 ];

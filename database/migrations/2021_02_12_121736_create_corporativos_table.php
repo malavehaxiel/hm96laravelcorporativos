@@ -23,7 +23,7 @@ class CreateCorporativosTable extends Migration
             $table->string('S_DBPassword', 150);
             $table->string('S_SystemUrl', 255);
             $table->boolean('S_Activo')->default(true);
-            $table->timestamp('D_FechaIncorporacion');
+            $table->date('D_FechaIncorporacion');
             $table->unsignedInteger('tw_usuarios_id');
             $table->timestamps();
             $table->softdeletes();
