@@ -13,4 +13,14 @@ class CorporativosController extends ResourceController
 	{
 		parent::__construct();
 	}
+
+	public function details($id)
+	{
+		if (is_null($this->repository->model->find($id)))
+    		return $this->errorNotFoundResponse();
+
+    	return $this->successResponse(
+    		$this->repository->details($id)
+    	);
+	}
 }

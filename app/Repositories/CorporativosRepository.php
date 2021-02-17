@@ -42,4 +42,14 @@ class CorporativosRepository extends Repository {
     {
     	return $model;
     }
+
+    public function details($id)
+    {
+        return $this->model->with('user')
+            ->with('contratos')
+            ->with('contactos')
+            ->with('empresas')
+            ->with('documentos')
+            ->find($id);
+    }
 }

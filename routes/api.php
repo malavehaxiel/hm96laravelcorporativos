@@ -33,6 +33,7 @@ Route::group(['middleware' => 'cors'], function() {
 		
 		// Corporativos
 		Route::resource('corporativos', 'CorporativosController');
+		Route::get('corporativos/detalles/{id}', 'CorporativosController@details');
 
 		// Documentos
 		Route::resource('documentos', 'DocumentoController');
