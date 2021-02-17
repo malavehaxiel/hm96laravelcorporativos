@@ -13,5 +13,11 @@ class Documento extends Model
         'S_Nombre', 'N_Obligatorio', 'S_Descripcion'
     ];
 
-    // RELATIONS
+    public function corporativos()
+    {
+        return $this->belongsToMany(
+        	Corporativo::class, 'tw_documentos_corporativos', 
+        	'tw_corporativos_id', 'tw_documentos_id'
+        )->withPivot('S_ArchivoUrl');
+    }
 }

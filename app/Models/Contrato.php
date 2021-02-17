@@ -12,4 +12,9 @@ class Contrato extends Model
     protected $fillable = [
         'D_FechaInicio', 'D_FechaFin', 'S_URLContrato', 'tw_corporativos_id'
     ];
+
+    public function corporativo()
+    {
+        return $this->belongsTo(Corporativo::class, 'tw_corporativos_id');
+    }
 }

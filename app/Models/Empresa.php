@@ -18,4 +18,9 @@ class Empresa extends Model
         'S_UrlRFC', 'S_UrlActaConstitutiva', 'S_Comentarios',
         'tw_corporativos_id'
     ];
+
+    public function corporativo()
+    {
+        return $this->belongsTo(Corporativo::class, 'tw_corporativos_id');
+    }
 }

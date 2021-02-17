@@ -31,4 +31,27 @@ class Corporativo extends Model
     {
         return $this->belongsTo(User::class, 'tw_usuarios_id', 'id');
     }
+
+    public function contratos()
+    {
+        return $this->hasMany(Contrato::class, 'tw_corporativos_id');
+    }
+
+    public function contactos()
+    {
+        return $this->hasMany(Contacto::class, 'tw_corporativos_id');
+    }
+
+    public function empresas()
+    {
+        return $this->hasMany(Empresa::class, 'tw_corporativos_id');
+    }
+
+    public function documentos()
+    {
+        return $this->belongsToMany(
+            Documento::class, 'tw_documentos_corporativos', 
+            'tw_corporativos_id', 'tw_documentos_id'
+        )->withPivot('S_ArchivoUrl');
+    }
 }
