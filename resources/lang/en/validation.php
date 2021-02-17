@@ -167,7 +167,19 @@ return [
         'S_Comentarios' => 'comentarios',
         'N_TelefonoFijo' => 'telefono fijo',
         'N_TelefonoMovil' => 'telefono movil',
-        'S_Email' => 'email'
+        'S_Email' => 'email',
+        'S_RazonSocial' => 'razón social',
+        'S_RFC' => 'RFC',
+        'S_Pais' => 'pais',
+        'S_Estado' => 'estado',
+        'S_Municipio' => 'municipio',
+        'S_ColoniaLocalidad' => 'colonia - localidad',
+        'S_Domicilio' => 'domicilio',
+        'S_CodigoPostal' => 'código postal',
+        'S_UsoCFDI' => 'uso CFDI',
+        'S_UrlRFC' => 'url del RFC',
+        'S_UrlActaConstitutiva' => 'url del acta constitutiva',
+        'S_Activo' => 'activo'
     ],
 
 ];

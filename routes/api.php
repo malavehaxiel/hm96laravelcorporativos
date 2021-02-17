@@ -45,6 +45,9 @@ Route::group(['middleware' => 'cors'], function() {
 
 		// Contactos Corporativos
 		Route::resource('contactos-corporativos', 'ContactoController');
+
+		// Empresas Corporativos
+		Route::resource('empresas-corporativos', 'EmpresaController');
 	});
 });
 
