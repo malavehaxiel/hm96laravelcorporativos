@@ -154,6 +154,12 @@ return [
         'S_DBPassword' => 'contraseña de base de datos',
         'S_SystemUrl' => 'url del sistema',
         'D_FechaIncorporacion' => 'fecha de incorporación',
+        'S_Nombre' => 'nombre',
+        'S_Descripcion' => 'descripcion',
+        'N_Obligatorio' => 'obligatorio',
+        'tw_corporativos_id' => 'corporativo',
+        'tw_documentos_id' => 'documento',
+        'S_ArchivoUrl' => 'url del archivo',
     ],
 
 ];

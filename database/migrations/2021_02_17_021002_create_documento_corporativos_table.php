@@ -13,9 +13,14 @@ class CreateDocumentoCorporativosTable extends Migration
      */
     public function up()
     {
-        Schema::create('documento_corporativos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('tw_documentos_corporativos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('tw_corporativos_id');
+            $table->unsignedInteger('tw_documentos_id');
+            $table->string('S_ArchivoUrl', 255)->nullable();
+
+            $table->foreign('tw_corporativos_id')->references('id')->on('tw_corporativos');
+            $table->foreign('tw_documentos_id')->references('id')->on('tw_documentos');
         });
     }
 
@@ -26,6 +31,6 @@ class CreateDocumentoCorporativosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documento_corporativos');
+        Schema::dropIfExists('tw_documentos_corporativos');
     }
 }

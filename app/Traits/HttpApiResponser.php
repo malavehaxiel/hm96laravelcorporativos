@@ -27,7 +27,7 @@ trait HttpApiResponser
         return $this->errorResponse($message, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
-    public function errorNotFoundResponse($message = '404 Not Fount')
+    public function errorNotFoundResponse($message = '404 Not Found')
     {
         return $this->errorResponse($message, Response::HTTP_NOT_FOUND);
     }
