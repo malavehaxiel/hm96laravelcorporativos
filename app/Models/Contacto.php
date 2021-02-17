@@ -14,7 +14,7 @@ class Contacto extends Model
         'N_TelefonoMovil', 'S_Email', 'tw_corporativos_id'
     ];
 
-     public function corporativo()
+    public function corporativo()
     {
         return $this->belongsTo(Corporativo::class, 'tw_corporativos_id');
     }

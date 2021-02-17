@@ -17,7 +17,9 @@ class ResourceController extends Controller {
 
 	public function index()
     {
-    	return $this->successResponse($this->repository->all());
+    	return $this->successResponse([
+            str_replace('tw_', '', $this->repository->model->getTable()) => $this->repository->all()
+        ]);
     }
 
     public function store(Request $request)

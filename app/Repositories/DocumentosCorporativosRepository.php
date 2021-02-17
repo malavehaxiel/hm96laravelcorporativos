@@ -30,4 +30,11 @@ class DocumentosCorporativosRepository extends Repository {
     {
     	return $model;
     }
+
+    public function details($documentoId)
+    {
+        return $this->model->with('corporativo')
+            ->where('tw_documentos_id', $documentoId)
+            ->get();
+    }
 }

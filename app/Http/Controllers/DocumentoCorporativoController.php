@@ -13,4 +13,14 @@ class DocumentoCorporativoController extends ResourceController
 	{
 		parent::__construct();
 	}
+
+	public function details($documentoId)
+	{
+		if (is_null($this->repository->model->find($documentoId)))
+    		return $this->errorNotFoundResponse();
+
+    	return $this->successResponse([
+    		'documentos' => $this->repository->details($documentoId)
+    	]);
+	}
 }

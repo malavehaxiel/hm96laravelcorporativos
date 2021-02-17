@@ -19,8 +19,8 @@ class CorporativosController extends ResourceController
 		if (is_null($this->repository->model->find($id)))
     		return $this->errorNotFoundResponse();
 
-    	return $this->successResponse(
-    		$this->repository->details($id)
-    	);
+    	return $this->successResponse([
+    		'corporativos' => $this->repository->details($id)
+    	]);
 	}
 }
