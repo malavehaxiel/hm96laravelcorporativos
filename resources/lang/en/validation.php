@@ -163,6 +163,11 @@ return [
         'D_FechaInicio' => 'fecha de inicio',
         'D_FechaFin' => 'fecha de fin',
         'S_URLContrato' => 'url del contrato',
+        'S_Puesto' => 'puesto',
+        'S_Comentarios' => 'comentarios',
+        'N_TelefonoFijo' => 'telefono fijo',
+        'N_TelefonoMovil' => 'telefono movil',
+        'S_Email' => 'email'
     ],
 
 ];

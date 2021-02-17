@@ -42,6 +42,9 @@ Route::group(['middleware' => 'cors'], function() {
 
 		// Contratos Corporativos
 		Route::resource('contratos-corporativos', 'ContratoController');
+
+		// Contactos Corporativos
+		Route::resource('contactos-corporativos', 'ContactoController');
 	});
 });
 
