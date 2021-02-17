@@ -39,6 +39,9 @@ Route::group(['middleware' => 'cors'], function() {
 
 		// Documentos Corporativos
 		Route::resource('documentos-corporativos', 'DocumentoCorporativoController');
+
+		// Contratos Corporativos
+		Route::resource('contratos-corporativos', 'ContratoController');
 	});
 });
 

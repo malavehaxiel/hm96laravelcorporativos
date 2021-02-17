@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\DocumentoCorporativo;
+use App\Models\Contrato;
 use Illuminate\Database\Seeder;
 
-class DocumentoCorporativoSeeder extends Seeder
+class ContratoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class DocumentoCorporativoSeeder extends Seeder
      */
     public function run()
     {
-        factory(DocumentoCorporativo::class, 30)->create();
+        factory(Contrato::class, 50)->create();
     }
 }

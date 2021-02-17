@@ -160,6 +160,9 @@ return [
         'tw_corporativos_id' => 'corporativo',
         'tw_documentos_id' => 'documento',
         'S_ArchivoUrl' => 'url del archivo',
+        'D_FechaInicio' => 'fecha de inicio',
+        'D_FechaFin' => 'fecha de fin',
+        'S_URLContrato' => 'url del contrato',
     ],
 
 ];
