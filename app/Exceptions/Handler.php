@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Database\QueryException;
 
 class Handler extends ExceptionHandler
 {
@@ -90,6 +91,14 @@ class Handler extends ExceptionHandler
         {
             $errors = $exception->validator->errors()->getMessages();
             $code = Response::HTTP_UNPROCESSABLE_ENTITY;
+
+            return $this->errorResponse($errors, $code);
+        }
+
+        if ($exception instanceof QueryException)
+        {
+            $errors = $exception->getMessage();
+            $code = Response::HTTP_INTERNAL_SERVER_ERROR;
 
             return $this->errorResponse($errors, $code);
         }
